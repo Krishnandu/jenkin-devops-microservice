@@ -37,6 +37,18 @@ pipeline{
 			}
 		}
 	}
+	
+	post {
+		always {
+			echo 'BlackAgumon Digivolution.'
+		}
+		success{
+			echo 'Evolution reached to Perfect level.'
+		}
+		failure{
+			echo 'Digivolution failed.'
+		}
+	}
 }
 	
 	
