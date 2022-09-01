@@ -22,16 +22,22 @@ pipeline{
 	agent any
 	stages {
 		stage('Rookie'){
-			echo "BlackAgumon"
+			steps {
+				echo "BlackAgumon"
+			}
 		}
 		stage('Champion'){
-			echo "Tyrannomon"
+			steps{
+				echo "Tyrannomon"
+			}
 		}
 		stage('Perfect'){
-			echo "MasterTyrannomon"
+			steps{
+			echo "MasterTyrannomon"	
+			}
 		}
 	}
-	
-	
-	
 }
+	
+	
+	
