@@ -83,7 +83,7 @@ pipeline{
 			steps{
 				//"docker build -t krishnandu360/currency-exchange-devops:$env.BUILD_TAG"
 				script{
-					docker.build("krishnandu360/currency-exchange-devops:${env.BUILD_TAG}")
+					dockerImage = docker.build("krishnandu360/jenkins-devops-microservice:${env.BUILD_TAG}")
 				}
 			}
 		}
