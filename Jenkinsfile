@@ -27,7 +27,7 @@ pipeline{
 		stage('Rookie'){
 			steps {
 				// sh 'mvn --version'
-				sh 'node --version'
+				// sh 'node --version'
 				echo "BlackAgumon"
 				echo "PATH - $PATH"
 				echo "BUILD_NUMBER - $env.BUILD_NUMBER"
