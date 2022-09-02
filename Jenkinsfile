@@ -23,11 +23,18 @@ pipeline{
 	// agent {docker{image 'maven:3.6.3'}}
 	// agent {docker {image 'node:13.8'}}
 
+	environment {
+		dockerHome = tool 'myDocker'
+		mavenHome = tool 'myMaven'
+		PATH = "$dockerHome/bin:$mavenHome/bin:$PATH"
+	}
+
 	stages {
 		stage('Rookie'){
 			steps {
-				// sh 'mvn --version'
+				sh 'mvn --version'
 				// sh 'node --version'
+				docker version
 				echo "BlackAgumon"
 				echo "PATH - $PATH"
 				echo "BUILD_NUMBER - $env.BUILD_NUMBER"
