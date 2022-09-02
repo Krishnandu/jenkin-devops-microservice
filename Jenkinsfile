@@ -44,14 +44,31 @@ pipeline{
 				echo "BUILD_URL - $env.BUILD_URL"
 			}
 		}
-		stage('Champion'){
+		// stage('Champion'){
+		// 	steps{
+		// 		echo "Tyrannomon"
+		// 	}
+		// }
+		// stage('Perfect'){
+		// 	steps{
+		// 	echo "MasterTyrannomon"	
+		// 	}
+		// }
+		stage('Compile'){
 			steps{
-				echo "Tyrannomon"
+				sh "mvn clean compile"
 			}
 		}
-		stage('Perfect'){
+
+		stage('Test'){
 			steps{
-			echo "MasterTyrannomon"	
+				sh "mvn test"
+			}
+		}
+
+		stage('Integration Test'){
+			steps{
+				sh "mvn failsafe:integration-test failsafe:verify "
 			}
 		}
 	}
